@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import 'moment/locale/ru';
 
 export default function withFriendlyDate(Component) {
   return class extends React.Component {

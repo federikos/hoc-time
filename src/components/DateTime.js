@@ -14,5 +14,7 @@ DateTime.propTypes = {
 
 const DateTimePretty = withFriendlyDate(DateTime);
 
-export {DateTime};
-export default DateTimePretty;
+
+//Экспортируем DateTime по умолчанию, DateTimePretty - дополнительная опция
+export {DateTimePretty};
+export default DateTime;

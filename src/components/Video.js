@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DateTimePretty from './DateTime';
+import {DateTimePretty} from './DateTime';
 
 const Video = ({url, date}) => {
   return (

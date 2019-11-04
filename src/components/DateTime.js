@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import withFriendlyDate from './withFriendlyDate';
 
 const DateTime = ({date}) => {
   return (
@@ -11,4 +12,7 @@ DateTime.propTypes = {
   date: PropTypes.string.isRequired,
 };
 
-export default DateTime;
+const DateTimePretty = withFriendlyDate(DateTime);
+
+export {DateTime};
+export default DateTimePretty;

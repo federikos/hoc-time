@@ -11,14 +11,22 @@ export default function withFriendlyDate(Component) {
       }
     }
 
+    getFriendlyDateString = date => {
+      if (moment().diff(date, 'day') <= 25) {
+        return moment(date).fromNow()
+      }
+      return `${moment().diff(date, 'day')} дней назад`;
+    }
+
     componentDidMount() {
+      const friendlyDate = this.getFriendlyDateString(this.props.date);
       this.setState({
-        friendlyDate: moment(this.props.date).fromNow()
+        friendlyDate
       })
     }
 
     render() {
-      return <Component {...this.props} date={moment(this.props.date).fromNow()} />
+      return <Component {...this.props} date={this.state.friendlyDate} />
     }
   }
 }
